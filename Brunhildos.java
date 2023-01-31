@@ -24,7 +24,7 @@ public class Brunhildos extends JuniorRobot {
                 isDefending = false;
 				calculateDistanceToWall();
 				
-				//If energy under 50% robot will switch in the defence mode
+		//If energy under 50% robot will switch in the defence mode
             } else if (energy < 50) {
                 isDefending = true;
                 DefenceMode();
@@ -34,19 +34,19 @@ public class Brunhildos extends JuniorRobot {
 
     public void onScannedRobot() {
         
-			turnGunTo(scannedAngle);
+	turnGunTo(scannedAngle);
 			
-			//If the scannedDistance is under 100 Pixels then fire
+	//If the scannedDistance is under 100 Pixels then fire
         if (scannedDistance < 100 && isDefending == false) {
             fire(3);
-			}
+	}
 			
-          else if (scannedDistance > 0 || scannedDistance < 500) {
+        else if (scannedDistance > 0 || scannedDistance < 500) {
 		  
-			if(isDefending == false){
+		if(isDefending == false){
 			trackEnemy();
-			}
-			fire(1);
+		}
+		fire(1);
         }
     }
 	
@@ -70,10 +70,10 @@ public class Brunhildos extends JuniorRobot {
 
     public void DefenceMode() {
 		
-		//Find out distance to wall
+	//Find out distance to wall
         double moveDefence = fieldHeight - robotY;
 		
-		//Drive to a wall and go allong it
+	//Drive to a wall and go allong it
         if (heading > 90) {
             ahead((int) moveDefence);
             turnRight(90 - heading);
@@ -99,7 +99,7 @@ public class Brunhildos extends JuniorRobot {
 	public void calculateDistanceToWall() {
 	
    		double distanceToBottom = fieldHeight - robotY;
-	    double distanceToRight = fieldWidth - robotX;
+	    	double distanceToRight = fieldWidth - robotX;
 	
 		avoidWall(distanceToBottom, distanceToRight);
 	
@@ -117,9 +117,9 @@ public class Brunhildos extends JuniorRobot {
 		}
 	
 	}
+	
 	public void backAndForthMovement(){
 		back(75);
-        ahead(100);
+		ahead(100);
 	}
-
 }
